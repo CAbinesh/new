@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letstalk</title>
+    <link rel="stylesheet" href="appm5styles.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+        body {
+            font-size: 22px;
+            font-family: "Big Shoulders", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* Centers horizontally */
+            align-items: center;
+
+        }
+
+        .sigincard {
+            width: 350px;
+            box-shadow: 1px 1px 5px 1px black;
+            border-radius: 10px;
+            padding: 10px;
+            height: auto;
+            gap: 20px;
+            background: linear-gradient(90deg, rgb(150, 201, 127), rgb(64, 142, 179), rgb(179, 117, 173));
+            justify-content: center;
+        }
+
+        .control {
+            width: 99%;
+            margin-bottom: 15px;
+
+        }
+
+        .inputbox {
+            width: 100%;
+            padding-right: 40px;
+            /* Space for the button */
+            height: 40px;
+            font-size: 16px;
+            border: 2px solid #4708f3;
+            padding: 5px;
+
+        }
+
+        .inputbox:active {
+            border-color: 1px solid blue;
+        }
+
+        .cardhead {
+            padding: 10px;
+            color: blue;
+
+        }
+
+        
+        .or {
+
+
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0e0c0c;
+            margin: 20px 0;
+        }
+
+        .other-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+        }
+
+
+
+        .other {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            /* Adjust width */
+            padding: 12px;
+            border: 2px solid #4708f3;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            background: white;
+            transition: all 0.3s ease;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+            /* Adds subtle shadow */
+        }
+
+        .other:hover {
+            background-color: rgba(230, 221, 221, 0.644);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row align-items-center py-3">
+            <div class="header d-flex justify-content-between align-items-center w-100">
+                <header class="d-flex align-items-center">
+                    <h3 class="title mb-0"><a href="appm5.html" target="_self" class="nav-link"
+                            style="text-decoration: none; color: inherit" ;>DOTOD</a></h3>
+                    <img src="arrow.png" width="50px" class="ms-2">
+                </header>
+                <nav id="navbarNav"> <!-- Added id to the nav element -->
+                    <ul class="nav justify-content-end mb-0">
+                        <li class="nav-item"><a href="aboutus.html" target="_self" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="service.html" target="_self" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="chargers.html" target="_self" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="more.html" target="_self" class="nav-link">More</a></li>
+                    </ul>
+                </nav>
+                <!-- <h4><a href="letstalk.html" class="btn btn-primary">Let's Talk</a></h4> -->
+                <!-- Hamburger menu for small screens -->
+                <div class="hamburger d-block d-md-none" onclick="toggleNav()">&#9776;</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the navigation on small screens
+        function toggleNav() {
+            const nav = document.getElementById('navbarNav');
+            nav.classList.toggle('active');  // Toggle 'active' class to show/hide the menu
+        }
+    </script>
+    <!-- Body content starts here -->
+    <div class="container justify-content-center">
+        <div class="sigincard justify-content-center">
+            <div class="cardhead">
+                Log in
+            </div>
+            <div class="cardbody">
+                <!-- <div class="label"><label for="email"></label></div> -->
+                <div class="control"><input type="email" class="inputbox" id="Email" name="email" autocomplete="on"
+                        required="required" placeholder="Email or Phonenumber" autofocus></div>
+                <!-- <div class="label"><label for="password">Password</label></div> -->
+                <div class="control"><input type="password" class="inputbox" id="password" name="password"
+                        autocomplete="off" required="required" placeholder="Password">
+                    <!-- <button class="toggle-password" onclick="togglePassword()">Show</button> -->
+                </div>
+
+                <div class="or">or</div>
+                <div class="other-container">
+                    <div class="other">
+                        <a href="https://accounts.google.com/" target="_self" style="text-decoration: none; color: inherit;">
+                        <img src="icons8-google-48.png" width="28px" height="28px" alt="Google"> Continue with Google</a>
+                    </div>
+                    <div class="other">
+                        <a href="https://support.apple.com/en-in/111001" target="_self" style="text-decoration: none; color: inherit;">
+                        <img src="icons8-mac-50.png" width="28px" height="28px" alt="Apple"> Sign in with Apple</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mainfooter">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="ad1">DOTOD</h3><img src="arrow.png" width="50px">
+                    <h6>© 2010 - 2025, Dotod Broking Ltd.<br> All rights reserved.</h6>
+                    <img src="instagram.png" width="20px" height="30px">
+                    <img src="whatsapp.png" width="20px" height="30px">
+                    <img src="twitter.png" width="20px" height="30px">
+                    <img src="linkedin.png" width="20px" height="30px">
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4">
+                    <h4>Company</h4>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">About</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Community</a><br>
+                    <a href="chargers.html" target="_self" class="text-decoration-none text-dark fs-6">Pricing</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">More</a><br>
+                    <a href="https://www.merriam-webster.com/dictionary/referral" target="_self" class="text-decoration-none text-dark fs-6">Referral</a><br>
+                    <a href="https://careerscloud.in/" target="_self" class="text-decoration-none text-dark fs-6">Career</a><br>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">DOTOD</a><br>
+                    <a href="https://opensource.org/" target="_self" class="text-decoration-none text-dark fs-6">Open source</a><br>
+                    <a href="https://en.wikipedia.org/wiki/Press" target="_self" class="text-decoration-none text-dark fs-6">Press & Media</a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4 fw-bolder">
+                    <h4>Support</h4>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">Connect</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">Help</a><br>
+                    <a href="https://about.google/products/" target="_self" class="text-decoration-none text-dark fs-6">Download</a><br>
+                    <a href="https://www.youtube.com/" target="_self" class="text-decoration-none text-dark fs-6">Video</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Pages</a><br>
+                    <a href="https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen" target="_self" class="text-decoration-none text-dark fs-6">Techie</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Sources</a><br>
+                    <a href="https://files.google.com/" target="_self" class="text-decoration-none text-dark fs-6">File Complaint</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Status of Complaint</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</html>

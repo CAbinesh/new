@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="appm5styles.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+          body {
+            font-size: 22px;
+            font-family:  "Big Shoulders", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .box {
+            border: 1px solid rgba(0, 0, 0, 0.342);
+            padding: 20px;
+            margin-top: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 50vh;
+            /* align-content: last baseline; */
+            border-radius: 35px;
+            background-color: rgba(240, 248, 255, 0.452);
+            cursor: pointer;
+            transition: all 0.3s;
+
+
+        }
+
+        .containerbox {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 15px;
+            gap: 10px 20px;
+            background-image: url(work.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .circle-icon {
+            margin-bottom: 50px;
+            border-radius: 99%;
+            background: linear-gradient(90deg, rgb(150, 201, 127), rgb(64, 142, 179), rgb(179, 117, 173));
+
+        }
+
+        .box:hover {
+            background-color: rgba(75, 67, 55, 0.63);
+            color: rgba(245, 245, 245, 0.781);
+        }
+
+        .box:hover .circle-icon {
+            transform: scale(1.2);
+
+        }
+        @media (max-width: 480px) {
+        .containerbox {
+            min-height: 200px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row align-items-center py-3">
+            <div class="header d-flex justify-content-between align-items-center w-100">
+                <header class="d-flex align-items-center">
+                    <h3 class="title mb-0"><a href="appm5.html" target="_self" class="nav-link" style="text-decoration: none; color: inherit";>DOTOD</a></h3>
+                    <img src="arrow.png" width="50px" class="ms-2">
+                </header>
+                <nav id="navbarNav"> <!-- Added id to the nav element -->
+                    <ul class="nav justify-content-end mb-0">
+                        <li class="nav-item"><a href="aboutus.html" target="_self" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="service.html" target="_self" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="chargers.html" target="_self" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="more.html" target="_self" class="nav-link">More</a></li>
+                    </ul>
+                </nav>
+                <h4><a href="letstalk.html" class="btn btn-primary">Let's Talk</a></h4>
+                <!-- Hamburger menu for small screens -->
+                <div class="hamburger d-block d-md-none" onclick="toggleNav()">&#9776;</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the navigation on small screens
+        function toggleNav() {
+            const nav = document.getElementById('navbarNav');
+            nav.classList.toggle('active');  // Toggle 'active' class to show/hide the menu
+        }
+    </script>
+        <!-- Body content starts here -->
+
+      <div class="container-fluid">
+        <div class="row">
+            <div class="containerbox d-flex flex-wrap justify-content-around">
+                <!-- Investment Section -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <section class="box Investment text-center">
+                        <img src="investment.png" width="80px" height="80px" class="circle-icon">
+                        <h4>Investment</h4>
+                        <p>Sample text. Click to select the Text Element.</p>
+                    </section>
+                </div>
+    
+                <!-- Finance Section -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <section class="box Finance text-center">
+                        <img src="budget.png" width="80px" height="80px" class="circle-icon">
+                        <h4>Finance</h4>
+                        <p>Sample text. Click to select the Text Element.</p>
+                    </section>
+                </div>
+    
+                <!-- Risk Management Section -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <section class="box RiskManagement text-center">
+                        <img src="management.png" width="80px" height="80px" class="circle-icon">
+                        <h4>Risk Management</h4>
+                        <p>Sample text. Click to select the Text Element.</p>
+                    </section>
+                </div>
+    
+                <!-- Audit & Accounting Section -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <section class="box AuditAccounting text-center">
+                        <img src="audit.png" width="80px" height="80px" class="circle-icon">
+                        <h4>Audit & Accounting</h4>
+                        <p>Sample text. Click to select the Text Element.</p>
+                    </section>
+                </div>
+    
+                <!-- Marketing Section -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <section class="box Marketing text-center">
+                        <img src="social-media.png" width="80px" height="80px" class="circle-icon">
+                        <h4>Marketing</h4>
+                        <p>Sample text. Click to select the Text Element.</p>
+                    </section>
+                </div>
+    
+                <!-- Experience Section -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <section class="box Experience text-center">
+                        <img src="house.png" width="80px" height="80px" class="circle-icon">
+                        <h4>Experience</h4>
+                        <p>Sample text. Click to select the Text Element.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="mainfooter">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="ad1">DOTOD</h3><img src="arrow.png" width="50px">
+                    <h6>© 2010 - 2025, Dotod Broking Ltd.<br> All rights reserved.</h6>
+                    <img src="instagram.png" width="20px" height="30px">
+                    <img src="whatsapp.png" width="20px" height="30px">
+                    <img src="twitter.png" width="20px" height="30px">
+                    <img src="linkedin.png" width="20px" height="30px">
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4">
+                    <h4>Company</h4>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">About</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Community</a><br>
+                    <a href="chargers.html" target="_self" class="text-decoration-none text-dark fs-6">Pricing</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">More</a><br>
+                    <a href="https://www.merriam-webster.com/dictionary/referral" target="_self" class="text-decoration-none text-dark fs-6">Referral</a><br>
+                    <a href="https://careerscloud.in/" target="_self" class="text-decoration-none text-dark fs-6">Career</a><br>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">DOTOD</a><br>
+                    <a href="https://opensource.org/" target="_self" class="text-decoration-none text-dark fs-6">Open source</a><br>
+                    <a href="https://en.wikipedia.org/wiki/Press" target="_self" class="text-decoration-none text-dark fs-6">Press & Media</a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4 fw-bolder">
+                    <h4>Support</h4>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">Connect</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">Help</a><br>
+                    <a href="https://about.google/products/" target="_self" class="text-decoration-none text-dark fs-6">Download</a><br>
+                    <a href="https://www.youtube.com/" target="_self" class="text-decoration-none text-dark fs-6">Video</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Pages</a><br>
+                    <a href="https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen" target="_self" class="text-decoration-none text-dark fs-6">Techie</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Sources</a><br>
+                    <a href="https://files.google.com/" target="_self" class="text-decoration-none text-dark fs-6">File Complaint</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Status of Complaint</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More</title>
+    <link rel="stylesheet" href="appm5styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+        body {
+            font-size: 22px;
+            font-family: "Big Shoulders", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .search-box {
+            padding: 10px;
+            width: 50%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            align-items: center;
+            margin-left: 25%;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        .more h2 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .disclaimer {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: italic;
+            padding: 10px;
+            margin-left: 25px;
+            margin-top: 50px;
+        }
+
+        .disclaimer p {
+
+            line-height: 1.8;
+            /* Adds space between lines */
+            margin-bottom: 20px;
+            /* Adds space below paragraphs */
+            align-items: center;
+
+        }
+
+        .suggestions {
+            position: absolute;
+            width: 100%;
+            /* Match the width of the input box */
+            background: white;
+            border: 1px solid #ccc;
+            display: none;
+            max-height: 150px;
+            overflow-y: auto;
+            left: 50%;
+            /* Center horizontally */
+            transform: translateX(-50%);
+            /* Shift left by 50% of its own width */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+            /* Keep it on top */
+        }
+
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            /* Center text */
+        }
+
+        .suggestions div:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row align-items-center py-3">
+            <div class="header d-flex justify-content-between align-items-center w-100">
+                <header class="d-flex align-items-center">
+                    <h3 class="title mb-0"><a href="appm5.html" target="_self" class="nav-link"
+                            style="text-decoration: none; color: inherit" ;>DOTOD</a></h3>
+                    <img src="arrow.png" width="50px" class="ms-2">
+                </header>
+                <nav id="navbarNav"> <!-- Added id to the nav element -->
+                    <ul class="nav justify-content-end mb-0">
+                        <li class="nav-item"><a href="aboutus.html" target="_self" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="service.html" target="_self" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="chargers.html" target="_self" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="more.html" target="_self" class="nav-link">More</a></li>
+                    </ul>
+                </nav>
+                <h4><a href="letstalk.html" class="btn btn-primary">Let's Talk</a></h4>
+                <!-- Hamburger menu for small screens -->
+                <div class="hamburger d-block d-md-none" onclick="toggleNav()">&#9776;</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the navigation on small screens
+        function toggleNav() {
+            const nav = document.getElementById('navbarNav');
+            nav.classList.toggle('active');  // Toggle 'active' class to show/hide the menu
+        }
+    </script>
+    <!-- more starts here -->
+    <!-- Body content starts here -->
+
+    <div class="more">
+        <h2>Here to help you!..</h2>
+        <form>
+            <input type="text" name="q" placeholder="Search..." class="search-box" id="searchBox">
+            <button type="submit">Search</button>
+            <ul id="suggestionsBox" class="suggestions"></ul>
+        </form>
+    </div>
+    <!-- script for search box starts -->
+    <script>
+        $(document).ready(function () {
+            var searchSuggestion = [
+                "Help Center",
+                "How to reset password",
+                "Account settings",
+                "Payment issues",
+                "Order tracking",
+                "Cancel subscription",
+                "Refund policy",
+                "Technical support",
+                "Live chat",
+                "Contact customer care",
+                "National Stock Exchange of India Limited", "Derivatives Exchange Limited (NCDEX), ", "Group to the Customer ", "Offer or the Service"
+            ];
+            $("#searchBox").keyup(function () {
+                var query = $(this).val().toLowerCase();
+                var suggestionsBox = $("#suggestionsBox");
+
+                if (query.length === 0) {
+                    suggestionsBox.hide();
+                    return
+                };
+
+                var filteredSuggestion = searchSuggestion.filter(function (item) {
+                    return item.toLowerCase().includes(query);
+                });
+
+                if (filteredSuggestion.length > 0) {
+                    var html = filteredSuggestion.map(function (suggestion) {
+                        return "<div class='suggestion-item'>" + suggestion + "</div>";
+                    }).join("");
+                    suggestionsBox.html(html).show();
+                } else {
+                    suggestionsBox.hide();
+                }
+            });
+
+            $(document).on("click", ".suggestion-item", function () {
+                $("#searchBox").val($(this).text());
+                $("#suggestionsBox").hide();
+            });
+            $(document).click(function (e) {
+                if (!$(e.target).closest(".search-box, .suggestions").length) {
+                    $("#suggestionsBox").hide();
+                };
+            })
+        })
+    </script>
+
+    <div class="disclaimer">
+        <h3>Disclaimer</h3>
+        <!-- <p>This website is owned and managed collectively by 2 Companies incorporated under the relevant provisions of
+            the
+            Companies Act, 1956 i.e. M/s Share India Securities Limited and M/s. Share India Commodity Brokers Pvt.
+            Limited
+            (hereinafter referred to as “the Group” for the sake of brevity). Your usage of this website shall always be
+            subject to the “LIABILITY DISCLAIMER” given hereinafter:</p> -->
+        <h4>Liability Disclaimer</h4>
+        <p>The website, including any content or information contained with it or any website related service, or any
+            product or service licensed or purchased through the website, is provided on an “as is” basis and without
+            warranties of any kind, either express or implied, including, but not limited to warranties of title or
+            non-infringement or warranties of merchantability and fitness for a particular purpose, other than those
+            warranties which are implied by and incapable of exclusion, restriction or modification under the applicable
+            laws.<br>
+        <p>National Stock Exchange of India Limited (NSE), Bombay Stock Exchange Limited (BSE), MCX Stock Exchange
+            Limited (MCX-SX), Multi Commodity Exchange of India Limited (MCX), National Commodity And Derivatives
+            Exchange Limited (NCDEX), Central Depository Services (India) Limited (CDSL), Forward Markets Commission
+            (FMC) and/or Securities and Exchange Board of India (SEBI) are not in any manner answerable, responsible or
+            liable to any person or persons for any acts of omission or commission, errors, mistakes and/or violation,
+            actual or perceived, by us or our partners, agents, associates etc., of any of the Rules, Regulations,
+            Bye-laws of the said Exchanges, SEBI Act or any other laws in force from time to time. Further, the said
+            Exchanges, Depository, FMC or the SEBI are not answerable, responsible or liable for any information on this
+            website or for any services rendered by our employees, our servants and us.<br></p>
+
+        <p>The Group does not warrant that your access to the website and/or related services will be uninterrupted or
+            error-free, that defects will be corrected, or that this website or the server that makes it available is
+            free of viruses or other harmful components. Access to and use of this website and the information is at
+            your risk and the Group does not undertake any accountability for any irregularities, viruses or damage to
+            any computer that results from accessing, availing or downloading of any information from this website. You
+            assume total responsibility and risk for your use of this website and website-related services.<br></p>
+
+        <p>A possibility exist that unauthorized additions, deletions or alterations could be made by third parties to
+            the website. Although the Group attempts to ensure the integrity, correctness and authenticity of the
+            website, it makes no guarantees whatsoever as to its completeness, correctness or accuracy. The entire
+            “market data” is sourced from “An external data content agency” and we are not to be held responsible for
+            its “integrity / availability” of the same.<br></p>
+
+        <p>The Group does not make any personal recommendations. The data and information provided on the website is
+            not advice, professional or otherwise, and should not be relied upon as such. Neither the information, nor
+            any opinion contained in this website constitutes a solicitation or offer by the Group to buy or sell any
+            securities, futures, options or other financial instruments or provide any investment advice or service. The
+            Group or its employees have or may have an outstanding buy or sell position or holding in the securities,
+            options on securities or other related investments of respective issuers and/or companies. The investments
+            discussed or recommended in the market analysis, research reports, etc. may not be suitable for all
+            investors. Investors must make their own investment decisions based on their specific investment objectives
+            and financial position and only after consulting such independent advisors as may be necessary. Information
+            herein is believed to be reliable but the Group does not warrant its completeness or accuracy. The content
+            of the articles and the interpretation of data are solely the personal views of the contributors and do not
+            in any way reflect the views of the Group. Users are advised to peruse the articles and other data in the
+            website only as information and to rely on their own judgment when making investment decisions.<br></p>
+
+        <p>The Group is not responsible for the content of any of the linked websites. By providing access to other
+            web-sites, the Group is neither recommending nor endorsing the content available in the linked websites.<br>
+        </p>
+
+        <p>Except otherwise specifically provided, directors, officers, employees, agents, sponsors, consultants,
+            business partners or other representatives (‘service providers’) of the Group and its Affiliates shall not
+            be responsible or liable for any direct, indirect, incidental, consequential, special, exemplary, punitive
+            or any other damages (including without limitation loss of profits, loss or corruption of data, loss of
+            goodwill, work stoppage, computer failure or malfunction, or interruption of business) under any contract,
+            negligence, strict liability or other theory arising out of or relating in any way with the use of the
+            website or in reliance of the information available on this website, website-related services, or any
+            products or services offered or sold or displayed on this website. If the foregoing limitation is held to be
+            unenforceable, the maximum liability of the Group to the Customer shall be subject to the amount of fees
+            paid by the Customer for the services that he/she may have availed of through the website or in pursuance of
+            the Offer or the Service.</p>
+    </div>
+
+
+    <!-- dont touch below this footer -->
+    <div class="mainfooter">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="ad1">DOTOD</h3><img src="arrow.png" width="50px">
+                    <h6>© 2010 - 2025, Dotod Broking Ltd.<br> All rights reserved.</h6>
+                    <img src="instagram.png" width="20px" height="30px">
+                    <img src="whatsapp.png" width="20px" height="30px">
+                    <img src="twitter.png" width="20px" height="30px">
+                    <img src="linkedin.png" width="20px" height="30px">
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4">
+                    <h4>Company</h4>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">About</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Community</a><br>
+                    <a href="chargers.html" target="_self" class="text-decoration-none text-dark fs-6">Pricing</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">More</a><br>
+                    <a href="https://www.merriam-webster.com/dictionary/referral" target="_self" class="text-decoration-none text-dark fs-6">Referral</a><br>
+                    <a href="https://careerscloud.in/" target="_self" class="text-decoration-none text-dark fs-6">Career</a><br>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">DOTOD</a><br>
+                    <a href="https://opensource.org/" target="_self" class="text-decoration-none text-dark fs-6">Open source</a><br>
+                    <a href="https://en.wikipedia.org/wiki/Press" target="_self" class="text-decoration-none text-dark fs-6">Press & Media</a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4 fw-bolder">
+                    <h4>Support</h4>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">Connect</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">Help</a><br>
+                    <a href="https://about.google/products/" target="_self" class="text-decoration-none text-dark fs-6">Download</a><br>
+                    <a href="https://www.youtube.com/" target="_self" class="text-decoration-none text-dark fs-6">Video</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Pages</a><br>
+                    <a href="https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen" target="_self" class="text-decoration-none text-dark fs-6">Techie</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Sources</a><br>
+                    <a href="https://files.google.com/" target="_self" class="text-decoration-none text-dark fs-6">File Complaint</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Status of Complaint</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</html>

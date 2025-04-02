@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="appm5styles.css">
+
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+          body {
+            font-size: 22px;
+            font-family:  "Big Shoulders", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .container {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            font-style: italic;
+        }
+
+        .container p {
+            color: rgb(94, 82, 82);
+            font-weight: 400;
+        }
+
+        .tophead {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .instruction {
+            margin-top: 50px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ad1 {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .mainfooter {
+            /* display: flex;
+            justify-content: space-around;
+            align-items: center; */
+            margin-top: 50px;
+            background-color: rgb(238, 229, 229);
+            /* padding: 20px;
+            margin-bottom: 50px;
+            list-style-type: none;
+            gap: 10px; */
+            font-weight: 200;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row align-items-center py-3">
+            <div class="header d-flex justify-content-between align-items-center w-100">
+                <header class="d-flex align-items-center">
+                    <h3 class="title mb-0"><a href="appm5.html" target="_self" class="nav-link" style="text-decoration: none; color: inherit";>DOTOD</a></h3>
+                    <img src="arrow.png" width="50px" class="ms-2">
+                </header>
+                <nav id="navbarNav"> <!-- Added id to the nav element -->
+                    <ul class="nav justify-content-end mb-0">
+                        <li class="nav-item"><a href="aboutus.html" target="_self" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="service.html" target="_self" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="chargers.html" target="_self" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="more.html" target="_self" class="nav-link">More</a></li>
+                    </ul>
+                </nav>
+                <h4><a href="letstalk.html" class="btn btn-primary">Let's Talk</a></h4>
+                <!-- Hamburger menu for small screens -->
+                <div class="hamburger d-block d-md-none" onclick="toggleNav()">&#9776;</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Function to toggle the navigation on small screens
+        function toggleNav() {
+            const nav = document.getElementById('navbarNav');
+            nav.classList.toggle('active');  // Toggle 'active' class to show/hide the menu
+        }
+    </script>
+
+        <!-- Body content starts here -->
+    <div class="container-fluid">
+        <div class="tophead">
+            <h1>Pricing</h1>
+            <p>List of all charges and taxes</p>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12  text-center mb-4">
+                <img src="0-percent (1).gif" alt="0percent" class="img-fluid  w-75 h-75">
+                <h3>Free equity delivery</h3>
+                <p>All equity delivery investments (NSE, BSE), are absolutely free — ₹ 0 brokerage.</p>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12  text-center mb-4">
+                <img src="10-percent.gif" alt="10percent" class="img-fluid  w-75 h-75">
+                <h3>Intraday and F&O trades</h3>
+                <p>Flat ₹ 20 or 0.03% (whichever is lower) per executed order on intraday trades across equity,
+                    currency, and commodity trades. Flat ₹20 on all option trades.</p>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4">
+                <img src="25-percent.gif" alt="25percent" class="img-fluid  w-75 h-75">
+                <h3>Free direct MF</h3>
+                <p>All direct mutual fund investments are absolutely free — ₹ 0 commissions & DP charges.</p>
+            </div>
+        </div>
+
+        <div class="instruction">
+            <h5>GST</h5>
+            <p>Tax levied by the government on the services rendered. 18% of ( brokerage + SEBI charges + transaction
+                charges)</p>
+            <h5>SEBI Charges</h5>
+            <p>Charged at ₹10 per crore + GST by Securities and Exchange Board of India for regulating the markets.</p>
+            <h5>DP (Depository participant) charges</h5>
+            <p>₹15.34 per scrip (₹3.5 CDSL fee + ₹9.5 Zerodha fee + ₹2.34 GST) is charged on the trading account ledger
+                when
+                stocks are sold, irrespective of quantity.
+
+                Female demat account holders (as first holder) will enjoy a discount of ₹0.25 per transaction on the
+                CDSL
+                fee.
+
+                Debit transactions of mutual funds & bonds get an additional discount of ₹0.25 on the CDSL fee.</p>
+            <h5>Pledging charges</h5>
+            <p>₹30 + GST per pledge request per ISIN.</p>
+            <h5>AMC (Account maintenance charges)</h5>
+            <p>For BSDA demat account: Zero charges if the holding value is less than ₹4,00,000. To learn more about
+                BSDA,
+            </p>
+            <h5>Corporate action order charges</h5>
+            <p>₹20 plus GST will be charged for OFS / buyback / takeover / delisting orders placed through Console.</p>
+            <h5>Off-market transfer charges</h5>
+            <p>₹25 per transaction.</p>
+            <h5>Physical CMR request</h5>
+            <p>First CMR request is free. ₹20 + ₹100 (courier charge) + 18% GST for subsequent requests.</p>
+            <h5>Payment gateway charges</h5>
+            <p>₹9 + GST (Not levied on transfers done via UPI)</p>
+            <h5>Delayed Payment Charges</h5>
+            <p>Interest is levied at 18% a year or 0.05% per day on the debit balance in your trading account.</p>
+        </div>
+
+    </div>
+    <div class="mainfooter">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="ad1">DOTOD</h3><img src="arrow.png" width="50px">
+                    <h6>© 2010 - 2025, Dotod Broking Ltd.<br> All rights reserved.</h6>
+                    <img src="instagram.png" width="20px" height="30px">
+                    <img src="whatsapp.png" width="20px" height="30px">
+                    <img src="twitter.png" width="20px" height="30px">
+                    <img src="linkedin.png" width="20px" height="30px">
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4">
+                    <h4>Company</h4>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">About</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Community</a><br>
+                    <a href="chargers.html" target="_self" class="text-decoration-none text-dark fs-6">Pricing</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">More</a><br>
+                    <a href="https://www.merriam-webster.com/dictionary/referral" target="_self" class="text-decoration-none text-dark fs-6">Referral</a><br>
+                    <a href="https://careerscloud.in/" target="_self" class="text-decoration-none text-dark fs-6">Career</a><br>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">DOTOD</a><br>
+                    <a href="https://opensource.org/" target="_self" class="text-decoration-none text-dark fs-6">Open source</a><br>
+                    <a href="https://en.wikipedia.org/wiki/Press" target="_self" class="text-decoration-none text-dark fs-6">Press & Media</a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 text-center mb-4 fw-bolder">
+                    <h4>Support</h4>
+                    <a href="appm5.html" target="_self" class="text-decoration-none text-dark fs-6">Connect</a><br>
+                    <a href="more.html" target="_self" class="text-decoration-none text-dark fs-6">Help</a><br>
+                    <a href="https://about.google/products/" target="_self" class="text-decoration-none text-dark fs-6">Download</a><br>
+                    <a href="https://www.youtube.com/" target="_self" class="text-decoration-none text-dark fs-6">Video</a><br>
+                    <a href="aboutus.html" target="_self" class="text-decoration-none text-dark fs-6">Pages</a><br>
+                    <a href="https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen" target="_self" class="text-decoration-none text-dark fs-6">Techie</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Sources</a><br>
+                    <a href="https://files.google.com/" target="_self" class="text-decoration-none text-dark fs-6">File Complaint</a><br>
+                    <a href="service.html" target="_self" class="text-decoration-none text-dark fs-6">Status of Complaint</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

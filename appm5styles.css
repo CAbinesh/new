@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-size: 22px;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+    padding: 20px;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+.title a:visited,
+.title a:focus,
+.title a:active {  /* Corrected the selector */
+    color: inherit; /* Ensures the color doesn't change */
+}    
+
+.header ul  {
+    list-style-type: none;
+    display: flex;
+}
+
+.header ul li a {
+    padding: 10px 20px;
+    transition: all 0.5s;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+   
+}
+.header ul li a:hover {
+    background: linear-gradient(90deg, rgb(150, 201, 127), rgb(64, 142, 179), rgb(179, 117, 173))
+}
+ a{
+    text-decoration: none;
+}
+/* Mobile and small screen responsiveness */
+@media (max-width: 767px) {
+    #navbarNav {
+        display: none;  /* Hide the navigation by default */
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #fff;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .nav-item a {
+        font-size: 1.2rem;
+    }
+
+    /* Show the navigation links when the 'active' class is added */
+    #navbarNav.active {
+        display: block;
+    }
+
+    /* Hamburger icon styling */
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+.header h4 a {
+    border: 1px solid grey;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px black;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-decoration: none;
+    transition: all 0.35s;
+
+}
+
+.header h4 a:hover {
+    background-color: rgb(1, 1, 139);
+
+
+}
+
+h4 a:link h4 a:active {
+    background-color: rgb(1, 1, 139);
+    color: black;
+
+}
+
+.container1 {
+    display: flex;
+    background-color: rgb(92, 87, 87);
+    color: white;
+}
+
+.header h3 {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+
+
+.leftside {
+    padding: 10px;
+}
+
+.leftside h1 {
+    font-size: 75px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.leftside button {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    box-shadow: 0px 0px 5px 5px rgb(18, 19, 18);
+    cursor: pointer;
+
+}
+
+.leftside button:hover {
+    background-color: antiquewhite;
+}
+
+.container2 {
+
+    display: inline-flex;
+    padding: 25px 50px;
+    gap: 50px;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+
+.boxes {
+    justify-content: space-around;
+    border: 1px solid rgb(233, 218, 218);
+    padding: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.container3 {
+    background-color: rgb(243, 235, 235);
+    color: black;
+    display: flex;
+    padding: 0px 40px;
+    margin: 0px 20px;
+
+    border-radius: 15px;
+}
+
+.container3 ul {
+    list-style-type: none;
+}
+
+.container3 h3 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.inside3,
+.insideimg {
+    width: 50%;
+}
+
+.container3 li {
+    margin-top: 10px;
+    padding: 20px 0px;
+    padding-left: 35px;
+}
+
+/* footer */
+#para {
+    color: grey;
+    text-align: center;
+    padding: 25px 5px;
+    margin-top: 50px;
+}
+
+.footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.footer {
+    height: 300px;
+}
+
+.footer h3 {
+    text-align: center;
+    font-size: 35px;
+    padding: 25px 5px;
+    color: black;
+}
+
+.footer ul li {
+    margin-bottom: 25px;
+}
+
+.sub {
+    font-size: 10px;
+    color: grey;
+
+}
+.ad1 {
+    display: inline-flex;
+    align-items: center;
+}
+
+.mainfooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    background-color: rgb(238, 229, 229);
+    padding: 20px;
+    margin-bottom: 50px;
+    list-style-type: none;
+    gap: 10px;
+    font-weight: 200;
+}
+
+.mainfooter ul {
+    list-style-type: none;
+}
+
+.mainfooter li {
+    font-weight: 300;
+    gap: 10px;
+    padding: 10px;
+}
+
+li a:link,
+:visited {
+    color: black;
+}
+
+li a:hover {
+    color: blue;
+}
